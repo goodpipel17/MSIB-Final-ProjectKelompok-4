@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:register_login/screens/Admin/admin.dart';
+import 'package:register_login/screens/bottom_bar.dart/bottom_bar_admin.dart';
 
 import '../../models/user_model.dart';
 import '../../widgets/my_button.dart';
@@ -34,8 +36,10 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
             }
             if (state is LoginStatusState) {
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => bottom_bar_admin()));
               });
               log(state.data.toString());
             }
