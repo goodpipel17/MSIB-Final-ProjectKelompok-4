@@ -33,7 +33,7 @@ class Profile extends StatelessWidget {
           Padding(padding: EdgeInsets.all(5)),
           Center(
             child: Text(
-              'Reynaldy Kurniawan',
+              'Farhan',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),

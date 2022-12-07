@@ -4,7 +4,7 @@ import 'package:register_login/screens/home/home_screen.dart';
 
 import '../profile/Profile.dart';
 import '../profile/page1.dart';
-import '../profile/page2.dart';
+import '../profile/Wishlist.dart';
 
 class bottom_bar extends StatefulWidget {
   const bottom_bar({super.key});
@@ -25,7 +25,7 @@ class _bottom_barState extends State<bottom_bar> {
         children: [
           const HomeScreen(),
           const HomeScreen(),
-          const HomeScreen(),
+          const wishlist(),
           const Profile(),
         ],
         onPageChanged: (index) {

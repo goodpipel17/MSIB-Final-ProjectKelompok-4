@@ -15,8 +15,29 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // leading: Container(),
-          ),
+        titleTextStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
+        ),
+        backgroundColor: Color(0xffFBF6F0),
+        elevation: 0.0,
+        title: const Text('Hello Farhan!'),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.search_rounded,
+                color: Colors.black,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.shopping_cart,
+                color: Colors.black,
+              ))
+        ],
+      ),
       body: Center(child: Text("data")),
     );
   }
