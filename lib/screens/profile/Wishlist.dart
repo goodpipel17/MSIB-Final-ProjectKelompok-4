@@ -15,7 +15,13 @@ class _page2State extends State<wishlist> {
   @override
   Widget build(BuildContext context) {
     final urlimage =
-        'https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
+        'https://plus.unsplash.com/premium_photo-1669703777692-0289d224bcc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZmFzaGlvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60';
+
+    final urlimagewish =
+        "https://media.istockphoto.com/id/1333434618/id/foto/wanita-muda-yang-ramah-dengan-hoodie-biru.jpg?s=612x612&w=0&k=20&c=OeGT_qvuHFVlN-lLKcWMzpvrw_hl1Dki5UpAwF53I3w=";
+
+    final urlimagewish2 =
+        "https://media.istockphoto.com/id/1346758988/id/foto/potret-jenggot-rapper-afrika-amerika-di-studio.jpg?s=612x612&w=0&k=20&c=Z4h2y6zexv0vyreHPYhIimShKv5ChVQqbgdCnQQ2CXE=";
     return Scaffold(
       appBar: AppBar(
         titleTextStyle: TextStyle(
@@ -49,6 +55,7 @@ class _page2State extends State<wishlist> {
         crossAxisCount: 2,
         children: <Widget>[
           Container(
+            color: Color(0xFFFFA45B),
             padding: const EdgeInsets.all(8),
             child: Column(
               children: [
@@ -71,12 +78,13 @@ class _page2State extends State<wishlist> {
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(5)),
-                Text("Baju Baru"),
+                Text("Kalung silver"),
                 Text("Rp 50.000,00"),
               ],
             ),
           ),
           Container(
+            color: Color(0xFFFFA45B),
             padding: const EdgeInsets.all(8),
             child: Column(
               children: [
@@ -91,20 +99,19 @@ class _page2State extends State<wishlist> {
                     width: 200,
                     height: 160,
                     child: FittedBox(
-                      child: Image.network(
-                        urlimage,
-                      ),
+                      child: Image.network(urlimagewish),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(5)),
-                Text("Baju Baru"),
-                Text("Rp 50.000,00"),
+                Text("Hoodie biru"),
+                Text("Rp 250.000,00"),
               ],
             ),
           ),
           Container(
+            color: Color(0xFFFFA45B),
             padding: const EdgeInsets.all(8),
             child: Column(
               children: [
@@ -119,16 +126,14 @@ class _page2State extends State<wishlist> {
                     width: 200,
                     height: 160,
                     child: FittedBox(
-                      child: Image.network(
-                        urlimage,
-                      ),
+                      child: Image.network(urlimagewish2),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(5)),
-                Text("Baju Baru"),
-                Text("Rp 50.000,00"),
+                Text("Hoodie hitam"),
+                Text("Rp 350.000,00"),
               ],
             ),
           ),
