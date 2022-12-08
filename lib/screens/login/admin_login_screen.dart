@@ -3,13 +3,12 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:register_login/screens/Admin/admin.dart';
-import 'package:register_login/screens/bottom_bar.dart/bottom_bar_admin.dart';
+
 
 import '../../models/user_model.dart';
 import '../../widgets/my_button.dart';
 import '../../widgets/my_text_field.dart';
-import '../home/home_screen.dart';
+import 'package:register_login/screens/home/admin/admin_dashboard.dart';
 import 'bloc/login_bloc.dart';
 
 class AdminLoginScreen extends StatefulWidget {
@@ -39,7 +38,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => bottom_bar_admin()));
+                        builder: (context) => AdminDashboard()));
               });
               log(state.data.toString());
             }
