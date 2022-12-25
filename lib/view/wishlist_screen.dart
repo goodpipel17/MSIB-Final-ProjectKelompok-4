@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_project_kel_4/models/wishlist_model/wishlist_model.dart';
 import 'package:final_project_kel_4/view/Keranjang_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
-import 'package:final_project_kel_4/view/user_profile.dart';
 import 'package:final_project_kel_4/view_models/keranjang_view_model.dart';
 import 'package:final_project_kel_4/view_models/wishlist_view_model.dart';
 import 'package:flutter/material.dart';
@@ -99,8 +98,8 @@ class _WishlistScreenState extends State<WishlistScreen> {
         ),
         child: ListView(children: [
           Column(
-              // children: <Widget>[_listOfWishlist()],
-              ),
+            children: <Widget>[_listOfWishlist()],
+          ),
           const SizedBox(height: 15)
         ]),
       ),
@@ -163,7 +162,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                   children: <Widget>[
                     Text(
                       wishlist.product.nama,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'serif',
                           fontWeight: FontWeight.bold,
                           fontSize: 11.0,
@@ -173,7 +172,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                     Text(
                       // ignore: prefer_interpolation_to_compose_strings
                       'Stock ' + wishlist.product.jumlah.toString(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'serif',
                           fontWeight: FontWeight.bold,
                           fontSize: 10.0,
@@ -183,7 +182,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                     Text(
                       // ignore: prefer_interpolation_to_compose_strings
                       '\$' + wishlist.product.harga.toString(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'serif',
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0,

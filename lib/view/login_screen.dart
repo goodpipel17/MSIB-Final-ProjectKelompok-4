@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Container(
               padding: const EdgeInsets.only(top: 8, left: 45, right: 30),
-              child: Text(
+              child: const Text(
                 "SIGN IN",
                 style: TextStyle(
                     color: Color(0xff252525),
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Container(
               padding: const EdgeInsets.only(top: 8, left: 45, right: 30),
-              child: Text("Login to your account",
+              child: const Text("Login to your account",
                   style: TextStyle(
                       color: Color(0xff252525),
                       fontFamily: "Serif",
@@ -120,12 +120,12 @@ class _LoginPageState extends State<LoginPage> {
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xffFFA45B), width: 1.0),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xffFFA45B), width: 1.0),
                           ),
                           hintText: 'Email',
@@ -154,13 +154,13 @@ class _LoginPageState extends State<LoginPage> {
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50.0),
-                          borderSide:
-                              BorderSide(color: Color(0xffFFA45B), width: 1.0),
+                          borderSide: const BorderSide(
+                              color: Color(0xffFFA45B), width: 1.0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50.0),
-                          borderSide:
-                              BorderSide(color: Color(0xffFFA45B), width: 1.0),
+                          borderSide: const BorderSide(
+                              color: Color(0xffFFA45B), width: 1.0),
                         ),
                         hintText: 'Password',
                         hintStyle: const TextStyle(

@@ -5,6 +5,7 @@ import 'package:final_project_kel_4/view/search_screen.dart';
 import 'package:final_project_kel_4/view/sepatu_screen.dart';
 import 'package:final_project_kel_4/view/sweater_screen.dart';
 import 'package:final_project_kel_4/view/user_profile.dart';
+import 'package:final_project_kel_4/view/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,116 +35,34 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 71, 147, 248),
-        shadowColor: const Color.fromARGB(255, 0, 11, 106),
-        centerTitle: true,
+        backgroundColor: Colors.white,
+        centerTitle: false,
         title: const Text(
-          'Menu Page',
+          'Hello, Username !',
           style: TextStyle(
-              fontFamily: "Serif",
-              fontWeight: FontWeight.bold,
-              shadows: [
-                Shadow(
-                  color: Colors.black,
-                  blurRadius: 10.0,
-                  offset: Offset(1.0, 3.0),
-                ),
-                Shadow(
-                  color: Color.fromARGB(255, 71, 147, 248),
-                  blurRadius: 10.0,
-                  offset: Offset(-5.0, 5.0),
-                ),
-              ]),
+            fontFamily: "Serif",
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         ),
         automaticallyImplyLeading: false,
-        elevation: 2,
-        leading: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: PopupMenuButton(
-              color: Colors.blue.shade50,
-              padding: const EdgeInsets.all(10),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              elevation: 10,
-              itemBuilder: (context) {
-                return [
-                  const PopupMenuItem<int>(
-                    value: 0,
-                    child: Text(
-                      "Baju",
-                      style: TextStyle(
-                          fontFamily: 'serif', fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  const PopupMenuItem<int>(
-                    value: 1,
-                    child: Text(
-                      "Sweater",
-                      style: TextStyle(
-                          fontFamily: 'serif', fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  const PopupMenuItem<int>(
-                    value: 2,
-                    child: Text(
-                      "Celana",
-                      style: TextStyle(
-                          fontFamily: 'serif', fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  const PopupMenuItem<int>(
-                    value: 3,
-                    child: Text(
-                      "Sepatu",
-                      style: TextStyle(
-                          fontFamily: 'serif', fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ];
-              },
-              onSelected: ((value) {
-                if (value == 0) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const BajuScreen(categoryName: "k2_baju")));
-                } else if (value == 1) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const SweaterScreen(categoryName: "k2_sweater")));
-                } else if (value == 2) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const CelanaScreen(categoryName: "k2_celana")));
-                } else if (value == 3) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const SepatuScreen(categoryName: "k2_sepatu")));
-                }
-              }),
-              child: const Icon(Icons.menu),
-            )),
+        elevation: 0,
         actions: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: IconButton(
-              icon: const Icon(Icons.search),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const SearchScreen()),
                 );
               },
+              icon: const Icon(
+                Icons.search,
+                color: Colors.black,
+              ),
             ),
           ),
           const SizedBox(
@@ -153,28 +72,31 @@ class _MenuPageState extends State<MenuPage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const UserProfile()),
+                MaterialPageRoute(builder: (context) => const WishlistScreen()),
               );
             },
-            icon: const Icon(Icons.person),
+            icon: const Icon(
+              Icons.shopping_cart_rounded,
+              color: Colors.black,
+            ),
           ),
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            stops: const [
-              0.4,
-              0.9,
-            ],
-            colors: [
-              const Color.fromARGB(255, 133, 180, 255),
-              Colors.grey.shade300
-            ],
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.topRight,
+        //     end: Alignment.bottomLeft,
+        //     stops: const [
+        //       0.4,
+        //       0.9,
+        //     ],
+        //     colors: [
+        //       const Color.fromARGB(255, 133, 180, 255),
+        //       Colors.grey.shade300
+        //     ],
+        //   ),
+        // ),
         child: ListView(
           children: [
             Padding(

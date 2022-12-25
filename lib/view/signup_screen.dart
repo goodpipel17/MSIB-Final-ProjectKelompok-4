@@ -24,7 +24,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     Widget logo = const CircleAvatar(
-      backgroundColor: Color.fromARGB(255, 104, 162, 255),
+      backgroundColor: Color.fromARGB(455, 455, 455, 455),
       radius: 100,
       child: CircleAvatar(
         radius: 95,
@@ -33,259 +33,294 @@ class _SignUpPageState extends State<SignUpPage> {
     );
 
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 71, 147, 248),
-          shadowColor: const Color.fromARGB(255, 0, 11, 106),
-          centerTitle: true,
-          title: const Text(
-            'GO-SHOP',
-            style: TextStyle(
-                fontFamily: "Serif",
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  Shadow(
-                    color: Colors.black,
-                    blurRadius: 10.0,
-                    offset: Offset(1.0, 3.0),
-                  ),
-                  Shadow(
-                    color: Color.fromARGB(255, 71, 147, 248),
-                    blurRadius: 10.0,
-                    offset: Offset(-5.0, 5.0),
-                  ),
-                ]),
+      body: ListView(
+        padding: const EdgeInsets.only(top: 50.0),
+        children: <Widget>[
+          Center(child: logo),
+          const SizedBox(
+            height: 16,
           ),
-        ),
-        body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            stops: const [
-              0.4,
-              0.9,
-            ],
-            colors: [
-              const Color.fromARGB(255, 133, 180, 255),
-              Colors.grey.shade300
-            ],
-          )),
-          child: ListView(
-            padding: const EdgeInsets.only(top: 50.0),
-            children: <Widget>[
-              Center(child: logo),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                padding: const EdgeInsets.only(top: 8, left: 20, right: 30),
-                child: Column(
-                  children: <Widget>[
-                    TextFormField(
-                      controller: username,
-                      decoration: InputDecoration(
-                        fillColor: Colors.blue.shade200,
-                        filled: true,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
-                                color: Colors.blue.shade200, width: 1.0)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: const BorderSide(
-                                color: Colors.black26, width: 1.0)),
-                        hintText: 'Name',
-                        hintStyle: const TextStyle(
-                          fontFamily: "Serif",
-                        ),
-                      ),
+          Container(
+            padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
+            child: const Text(
+              "SIGN UP",
+              style: TextStyle(
+                  color: Color(0xff252525),
+                  fontFamily: "Serif",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22),
+            ),
+          ),
+          const SizedBox(
+            height: 2,
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
+            child: const Text("Create a new account",
+                style: TextStyle(
+                    color: Color(0xff252525),
+                    fontFamily: "Serif",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16)),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
+            child: Column(
+              children: <Widget>[
+                TextFormField(
+                  controller: username,
+                  decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Name',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
                     ),
-                    const SizedBox(
-                      height: 8,
+                    prefixIcon: const Icon(
+                      Icons.person,
+                      color: Colors.black87,
                     ),
-                    TextFormField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.blue.shade200,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
-                                color: Colors.blue.shade200, width: 1.0)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: const BorderSide(
-                                color: Colors.black26, width: 1.0)),
-                        hintText: 'Email',
-                        hintStyle: const TextStyle(
-                          fontFamily: "Serif",
-                        ),
-                      ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Email',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
                     ),
-                    const SizedBox(
-                      height: 8,
+                    prefixIcon: const Icon(
+                      Icons.email_outlined,
+                      color: Colors.black87,
                     ),
-                    TextFormField(
-                      controller: _handphoneController,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.blue.shade200,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
-                                color: Colors.blue.shade200, width: 1.0)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: const BorderSide(
-                                color: Colors.black26, width: 1.0)),
-                        hintText: 'Handphone',
-                        hintStyle: const TextStyle(
-                          fontFamily: "Serif",
-                        ),
-                      ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  controller: _handphoneController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Handphone',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
                     ),
-                    const SizedBox(
-                      height: 8,
+                    prefixIcon: const Icon(
+                      Icons.phone_android,
+                      color: Colors.black87,
                     ),
-                    TextFormField(
-                      controller: _passwordController,
-                      obscureText: _obscure,
-                      decoration: InputDecoration(
-                        fillColor: Colors.blue.shade200,
-                        filled: true,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
-                                color: Colors.blue.shade200, width: 1.0)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: const BorderSide(
-                                color: Colors.black26, width: 1.0)),
-                        hintText: 'Password',
-                        hintStyle: const TextStyle(
-                          fontFamily: "Serif",
-                        ),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              if (_obscure) {
-                                _obscure = false;
-                              } else {
-                                _obscure = true;
-                              }
-                            });
-                          },
-                          icon: const Icon(Icons.remove_red_eye),
-                        ),
-                      ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  controller: _passwordController,
+                  obscureText: _obscure,
+                  decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Password',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
                     ),
-                    const SizedBox(
-                      height: 16,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          if (_obscure) {
+                            _obscure = false;
+                          } else {
+                            _obscure = true;
+                          }
+                        });
+                      },
+                      icon: const Icon(Icons.remove_red_eye),
                     ),
-                    TextFormField(
-                      controller: _passwordConfirmController,
-                      obscureText: _obscure,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.blue.shade200,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: BorderSide(
-                                color: Colors.blue.shade200, width: 1.0)),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            borderSide: const BorderSide(
-                                color: Colors.black26, width: 1.0)),
-                        hintText: 'Confirm Password',
-                        hintStyle: const TextStyle(
-                          fontFamily: "Serif",
-                        ),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              if (_obscure) {
-                                _obscure = false;
-                              } else {
-                                _obscure = true;
-                              }
-                            });
-                          },
-                          icon: const Icon(Icons.remove_red_eye),
-                        ),
-                      ),
+                    prefixIcon: const Icon(
+                      Icons.lock,
+                      color: Colors.black87,
                     ),
-                    const SizedBox(
-                      height: 30,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  controller: _passwordConfirmController,
+                  obscureText: _obscure,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Confirm Password',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
                     ),
-                    SizedBox(
-                      height: 45.0,
-                      child: Consumer<RegisterViewModel>(
-                        builder: (context, register, _) => MaterialButton(
-                          onPressed: () async {
-                            try {
-                              await register
-                                  .postRegister(RegisterModel(
-                                      email: _emailController.text,
-                                      handphone: _handphoneController.text,
-                                      name: username.text,
-                                      password: _passwordController.text,
-                                      rePassword:
-                                          _passwordConfirmController.text))
-                                  .then(
-                                    (value) => Fluttertoast.showToast(
-                                            msg: 'berhasil register')
-                                        .then(
-                                      (value) =>
-                                          Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const LoginPage()),
-                                      ),
-                                    ),
-                                  );
-                            } catch (e) {
-                              Fluttertoast.showToast(msg: e.toString());
-                            }
-                          },
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(80.0)),
-                          padding: const EdgeInsets.all(0.0),
-                          child: Ink(
-                            decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  colors: [
-                                    Color.fromARGB(255, 68, 85, 195),
-                                    Color(0xff64B6FF)
-                                  ],
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          if (_obscure) {
+                            _obscure = false;
+                          } else {
+                            _obscure = true;
+                          }
+                        });
+                      },
+                      icon: const Icon(Icons.remove_red_eye),
+                    ),
+                    prefixIcon: const Icon(
+                      Icons.lock,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                  height: 45.0,
+                  child: Consumer<RegisterViewModel>(
+                    builder: (context, register, _) => MaterialButton(
+                      onPressed: () async {
+                        try {
+                          await register
+                              .postRegister(RegisterModel(
+                                  email: _emailController.text,
+                                  handphone: _handphoneController.text,
+                                  name: username.text,
+                                  password: _passwordController.text,
+                                  rePassword: _passwordConfirmController.text))
+                              .then(
+                                (value) => Fluttertoast.showToast(
+                                        msg: 'berhasil register')
+                                    .then(
+                                  (value) =>
+                                      Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const LoginPage()),
+                                  ),
                                 ),
-                                borderRadius: BorderRadius.circular(30.0)),
-                            child: Container(
-                              constraints: const BoxConstraints(
-                                  maxWidth: 400.0, minHeight: 50.0),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                "SIGN UP",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: "Serif",
-                                    fontWeight: FontWeight.bold),
-                              ),
+                              );
+                        } catch (e) {
+                          Fluttertoast.showToast(msg: e.toString());
+                        }
+                      },
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(80.0)),
+                      padding: const EdgeInsets.all(0.0),
+                      child: Ink(
+                        decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xffFFA45B), Color(0xffFFDA77)],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
                             ),
+                            borderRadius: BorderRadius.circular(30.0)),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                              maxWidth: 400.0, minHeight: 50.0),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            "SIGN UP",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Serif",
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 40,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text(
+                      'Already have an account? ',
+                      style: TextStyle(
+                        fontFamily: "Serif",
+                      ),
+                    ),
+                    const SizedBox(width: 1.0),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage()));
+                      },
+                      child: const Center(
+                        child: Text('Sign In',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Serif",
+                              color: Color.fromARGB(455, 68, 85, 195),
+                            )),
+                      ),
                     ),
                   ],
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
-        ));
+        ],
+      ),
+    );
   }
 }

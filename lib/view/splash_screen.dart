@@ -26,9 +26,9 @@ class _HomeState extends State<Home> {
   }
 
   var colorizeColors = [
-    Color.fromARGB(255, 223, 105, 14),
+    const Color.fromARGB(255, 223, 105, 14),
     Colors.white,
-    Color.fromARGB(255, 255, 98, 0),
+    const Color.fromARGB(255, 255, 98, 0),
     Colors.amber.shade900,
   ];
 

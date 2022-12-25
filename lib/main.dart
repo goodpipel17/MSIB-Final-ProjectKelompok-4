@@ -1,8 +1,4 @@
-import 'package:final_project_kel_4/view/bottomnav.dart';
 import 'package:final_project_kel_4/view/home_screen.dart';
-import 'package:final_project_kel_4/view/info_screen.dart';
-import 'package:final_project_kel_4/view/splash_screen.dart';
-import 'package:final_project_kel_4/view/success_screen.dart';
 
 import 'package:final_project_kel_4/view_models/keranjang_view_model.dart';
 import 'package:final_project_kel_4/view_models/login_view_model.dart';
@@ -52,7 +48,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Success(),
+        home: const MenuPage(),
       ),
     );
   }

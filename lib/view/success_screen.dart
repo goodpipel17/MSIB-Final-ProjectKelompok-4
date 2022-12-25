@@ -12,7 +12,7 @@ class Success extends StatelessWidget {
       child: CircleAvatar(
         backgroundColor: Colors.amber.shade800,
         radius: 110,
-        backgroundImage: AssetImage(
+        backgroundImage: const AssetImage(
           'images/success_pay.gif',
         ),
       ),
@@ -54,11 +54,11 @@ class Success extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
-                stops: const [
+                stops: [
               0.4,
               0.9,
             ],

@@ -79,8 +79,8 @@ class _CartScreenState extends State<CartScreen> {
         child: ListView(
           children: [
             Column(
-                // children: [_listOfKeranjang(), const SizedBox(height: 20)],
-                ),
+              children: [_listOfKeranjang(), const SizedBox(height: 20)],
+            ),
           ],
         ),
       ),
@@ -91,10 +91,10 @@ class _CartScreenState extends State<CartScreen> {
               margin: const EdgeInsets.all(10.0),
               height: 50.0,
               decoration: BoxDecoration(
-                color: Color(0xffFFA45B),
+                color: const Color(0xffFFA45B),
                 borderRadius: BorderRadius.circular(35.0),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Proceed To Checkout",
                   style: TextStyle(
@@ -215,7 +215,7 @@ class _CartScreenState extends State<CartScreen> {
                     children: <Widget>[
                       Text(
                         keranjang.cartProduct.nama,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: 'serif',
                             fontWeight: FontWeight.bold,
                             fontSize: 11.0,
@@ -225,7 +225,7 @@ class _CartScreenState extends State<CartScreen> {
                       Text(
                         // ignore: prefer_interpolation_to_compose_strings
                         'Jumlah: ' + keranjang.quantity.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: 'serif',
                             fontWeight: FontWeight.bold,
                             fontSize: 10.0,
@@ -235,7 +235,7 @@ class _CartScreenState extends State<CartScreen> {
                       Text(
                         // ignore: prefer_interpolation_to_compose_strings
                         '\$' + keranjang.cartProduct.harga.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: 'serif',
                             fontWeight: FontWeight.bold,
                             fontSize: 18.0,

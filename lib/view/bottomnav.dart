@@ -1,5 +1,3 @@
-import 'package:final_project_kel_4/view/Keranjang_screen.dart';
-import 'package:final_project_kel_4/view/info_screen.dart';
 import 'package:final_project_kel_4/view/home_screen.dart';
 import 'package:final_project_kel_4/view/user_profile.dart';
 import 'package:final_project_kel_4/view/wishlist_screen.dart';
@@ -60,8 +58,8 @@ class _BottomNavState extends State<BottomNav> {
                 label: 'Account'),
           ],
           currentIndex: _selectedIndex,
-          unselectedItemColor: Color(0xffFFA45B),
-          selectedItemColor: Color.fromARGB(255, 218, 119, 37),
+          unselectedItemColor: const Color(0xffFFA45B),
+          selectedItemColor: const Color.fromARGB(255, 218, 119, 37),
           onTap: _onItemTapped,
         ),
       ),
