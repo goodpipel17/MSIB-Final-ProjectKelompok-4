@@ -64,25 +64,26 @@ class SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.black87,
+            ),
+          ),
+          backgroundColor: Colors.white,
+          centerTitle: true,
           title: const Text(
             'Search Product',
             style: TextStyle(
-                fontFamily: "Serif",
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  Shadow(
-                    color: Colors.black,
-                    blurRadius: 10.0,
-                    offset: Offset(1.0, 3.0),
-                  ),
-                  Shadow(
-                    color: Color.fromARGB(255, 71, 147, 248),
-                    blurRadius: 10.0,
-                    offset: Offset(-5.0, 5.0),
-                  ),
-                ]),
+              fontFamily: "Serif",
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
           ),
-          centerTitle: true,
+          elevation: 2,
         ),
         body: Container(
           decoration: BoxDecoration(
@@ -93,10 +94,7 @@ class SearchScreenState extends State<SearchScreen> {
                 0.4,
                 0.9,
               ],
-              colors: [
-                const Color.fromARGB(255, 133, 180, 255),
-                Colors.grey.shade300
-              ],
+              colors: [Colors.white, Colors.grey],
             ),
           ),
           child: Column(

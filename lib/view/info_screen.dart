@@ -1,3 +1,4 @@
+import 'package:final_project_kel_4/view/bottomnav.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,8 +18,6 @@ class Info extends StatelessWidget {
     );
 
     Widget content2 = Container(
-      width: 150,
-      height: 150,
       margin: const EdgeInsets.all(50.0),
       padding: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
@@ -36,7 +35,7 @@ class Info extends StatelessWidget {
         children: const [
           Center(
             child: Text(
-              '"E-Pahlawan"',
+              '"E-PAHLAWAN"',
               style: TextStyle(
                 fontSize: 18.0,
                 fontFamily: 'Serif',
@@ -50,7 +49,7 @@ class Info extends StatelessWidget {
           ),
           Center(
             child: Text(
-              'E-Pahlawan adalah marketplace yang menyediakan Lapis dan brownis khas surabaya kesukaan anda. Apalagi yang anda tunggu pesan sekarang di E-pahlawan mudah dan praktis.',
+              'E-Pahlawan adalah marketplace yang menyediakan Legit Surabaya. Legit Sruabaya merupakan persembahan dari Surabaya untuk Indonesia. Merupakan Lapis Legit dengan cita rasa khas Nusantara yang benar-benar legit dan nikmat, karena dibuat menggunakan bahan-bahan terbaik. Kami menyediakan layanan mudah dan praktis, sehingga anda dapat merasakan kenikmatan Legit Surabaya semudah menjentikkan jari',
               textAlign: TextAlign.justify,
               style: TextStyle(
                 fontSize: 13.0,
@@ -61,6 +60,39 @@ class Info extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+    Widget button1 = SizedBox(
+      height: 45.0,
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const BottomNav()));
+        },
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+        padding: const EdgeInsets.all(0.0),
+        child: Ink(
+          decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color(0xffFFA45B), Color(0xffFFDA77)],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+              borderRadius: BorderRadius.circular(30.0)),
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 350.0, minHeight: 50.0),
+            alignment: Alignment.center,
+            child: const Text(
+              "Back to Homepage",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: "Serif",
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
       ),
     );
 
@@ -168,7 +200,11 @@ class Info extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            content3
+            content3,
+            const SizedBox(
+              height: 50,
+            ),
+            button1,
           ]),
         ),
       ),

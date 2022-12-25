@@ -41,28 +41,15 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
         backgroundColor: Colors.white,
-        // shadowColor: Color.fromARGB(255, 247, 229, 215),
-        // centerTitle: true,
         title: const Text(
-          'Keranjang Saya',
+          'Keranjang Saya !',
           style: TextStyle(
-            color: Colors.black87,
             fontFamily: "Serif",
             fontWeight: FontWeight.bold,
-            // shadows: [
-            //   Shadow(
-            //     color: Colors.black45,
-            //     blurRadius: 10.0,
-            //     offset: Offset(1.0, 3.0),
-            //   ),
-            //   Shadow(
-            //     color: Colors.black38,
-            //     blurRadius: 10.0,
-            //     offset: Offset(-5.0, 5.0),
-            //   ),
-            // ]
+            color: Colors.black,
           ),
         ),
+        elevation: 0,
       ),
       body: Container(
         decoration: BoxDecoration(

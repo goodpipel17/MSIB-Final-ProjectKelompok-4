@@ -30,30 +30,18 @@ class _WishlistScreenState extends State<WishlistScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        // shadowColor: Color.fromARGB(255, 247, 229, 215),
-        // centerTitle: true,
+        centerTitle: false,
         title: const Text(
-          'My Wishlist',
+          'My Wishlist !',
           style: TextStyle(
-            color: Colors.black87,
             fontFamily: "Serif",
             fontWeight: FontWeight.bold,
-            // shadows: [
-            //   Shadow(
-            //     color: Colors.black45,
-            //     blurRadius: 10.0,
-            //     offset: Offset(1.0, 3.0),
-            //   ),
-            //   Shadow(
-            //     color: Colors.black38,
-            //     blurRadius: 10.0,
-            //     offset: Offset(-5.0, 5.0),
-            //   ),
-            // ]
+            color: Colors.black,
           ),
         ),
+        automaticallyImplyLeading: false,
+        elevation: 0,
         actions: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 4),

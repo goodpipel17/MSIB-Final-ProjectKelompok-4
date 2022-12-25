@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:final_project_kel_4/view/Keranjang_screen.dart';
 
 import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
@@ -72,11 +73,11 @@ class _MenuPageState extends State<MenuPage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const WishlistScreen()),
+                MaterialPageRoute(builder: (context) => const CartScreen()),
               );
             },
             icon: const Icon(
-              Icons.shopping_cart_rounded,
+              Icons.shopping_cart_outlined,
               color: Colors.black,
             ),
           ),

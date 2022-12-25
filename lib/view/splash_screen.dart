@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
         pause: const Duration(milliseconds: 5000),
         repeatForever: true,
         animatedTexts: [
-          TypewriterAnimatedText('Makanan khas surabaya brand lapis pahlawan '),
+          TypewriterAnimatedText('Makanan khas surabaya brand lapis Surabaya '),
         ],
       ),
     );
