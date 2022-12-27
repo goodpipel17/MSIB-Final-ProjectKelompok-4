@@ -6,15 +6,15 @@ import 'package:provider/provider.dart';
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
 
-class CelanaScreen extends StatefulWidget {
+class BrownisScreen extends StatefulWidget {
   final String categoryName;
-  const CelanaScreen({super.key, required this.categoryName});
+  const BrownisScreen({super.key, required this.categoryName});
 
   @override
-  State<CelanaScreen> createState() => _CelanaScreenState();
+  State<BrownisScreen> createState() => _BrownisScreenState();
 }
 
-class _CelanaScreenState extends State<CelanaScreen> {
+class _BrownisScreenState extends State<BrownisScreen> {
   @override
   void initState() {
     super.initState();

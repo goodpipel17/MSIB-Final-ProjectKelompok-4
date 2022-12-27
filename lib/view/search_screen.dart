@@ -86,11 +86,11 @@ class SearchScreenState extends State<SearchScreen> {
           elevation: 2,
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
-              stops: const [
+              stops: [
                 0.4,
                 0.9,
               ],

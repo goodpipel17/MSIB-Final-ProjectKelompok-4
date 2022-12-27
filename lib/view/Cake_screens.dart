@@ -6,15 +6,15 @@ import 'package:provider/provider.dart';
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
 
-class SepatuScreen extends StatefulWidget {
+class CakeScreen extends StatefulWidget {
   final String categoryName;
-  const SepatuScreen({super.key, required this.categoryName});
+  const CakeScreen({super.key, required this.categoryName});
 
   @override
-  State<SepatuScreen> createState() => _SepatuScreenState();
+  State<CakeScreen> createState() => _CakeScreenState();
 }
 
-class _SepatuScreenState extends State<SepatuScreen> {
+class _CakeScreenState extends State<CakeScreen> {
   @override
   void initState() {
     super.initState();
@@ -29,24 +29,23 @@ class _SepatuScreenState extends State<SepatuScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          'Category Sepatu',
+          'Category Cake',
           style: TextStyle(
               fontFamily: "Serif",
               fontWeight: FontWeight.bold,
-              shadows: [
-                Shadow(
-                  color: Colors.black,
-                  blurRadius: 10.0,
-                  offset: Offset(1.0, 3.0),
-                ),
-                Shadow(
-                  color: Color.fromARGB(255, 71, 147, 248),
-                  blurRadius: 10.0,
-                  offset: Offset(-5.0, 5.0),
-                ),
-              ]),
+              color: Colors.black),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.black87,
+          ),
         ),
       ),
       body: Container(
@@ -58,10 +57,7 @@ class _SepatuScreenState extends State<SepatuScreen> {
               0.4,
               0.9,
             ],
-            colors: [
-              const Color.fromARGB(255, 133, 180, 255),
-              Colors.grey.shade300
-            ],
+            colors: [Colors.white, Colors.grey.shade300],
           ),
         ),
         child: ListView(

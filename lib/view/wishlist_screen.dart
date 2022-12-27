@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_project_kel_4/models/wishlist_model/wishlist_model.dart';
-import 'package:final_project_kel_4/view/Keranjang_screen.dart';
+import 'package:final_project_kel_4/view/keranjang_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
 import 'package:final_project_kel_4/view_models/keranjang_view_model.dart';
 import 'package:final_project_kel_4/view_models/wishlist_view_model.dart';

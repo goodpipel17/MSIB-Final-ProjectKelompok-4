@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:final_project_kel_4/view/Keranjang_screen.dart';
+import 'package:final_project_kel_4/view/Brownis_Screens.dart';
+import 'package:final_project_kel_4/view/Cake_screens.dart';
+import 'package:final_project_kel_4/view/keranjang_screen.dart';
+import 'package:final_project_kel_4/view/lapis_screen.dart';
 
 import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
-import 'package:final_project_kel_4/view/sepatu_screen.dart';
 import 'package:final_project_kel_4/view/sweater_screen.dart';
 import 'package:final_project_kel_4/view/user_profile.dart';
 import 'package:final_project_kel_4/view/wishlist_screen.dart';
@@ -12,8 +14,6 @@ import 'package:provider/provider.dart';
 
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
-import 'baju_screen.dart';
-import 'celana_screen.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -101,9 +101,147 @@ class _MenuPageState extends State<MenuPage> {
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(16),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const Text(
+                    'Categories',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const BrownisScreen(categoryName: ""),
+                              ),
+                            );
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80.0)),
+                          padding: const EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xffFFA45B),
+                                    Color(0xffFFDA77)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: const BoxConstraints(
+                                maxWidth: 80.0,
+                                minHeight: 30.0,
+                              ),
+                              child: const Text(
+                                "Brownis",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Serif",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const CakeScreen(categoryName: ""),
+                              ),
+                            );
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80.0)),
+                          padding: const EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xffFFA45B),
+                                    Color(0xffFFDA77)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: const BoxConstraints(
+                                maxWidth: 65.0,
+                                minHeight: 30.0,
+                              ),
+                              child: const Text(
+                                "Cake",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Serif",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const LapisScreen(categoryName: ""),
+                              ),
+                            );
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80.0)),
+                          padding: const EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xffFFA45B),
+                                    Color(0xffFFDA77)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: const BoxConstraints(
+                                maxWidth: 65.0,
+                                minHeight: 30.0,
+                              ),
+                              child: const Text(
+                                "Lapis",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Serif",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   // ===== MENU =====
                   const SizedBox(
                     height: 8,

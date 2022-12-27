@@ -1,4 +1,3 @@
-import 'package:final_project_kel_4/view/bottomnav.dart';
 import 'package:final_project_kel_4/view/info_screen.dart';
 import 'package:final_project_kel_4/view_models/user_view_model.dart';
 import 'package:flutter/material.dart';
@@ -95,23 +94,23 @@ class _UserProfileState extends State<UserProfile> {
                   child: Consumer<UserViewModel>(
                 builder: (context, login, _) => Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const CircleAvatar(
+                  children: const [
+                    CircleAvatar(
                       radius: 100.0,
                       backgroundImage: AssetImage('images/icon_profile.jpg'),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 10,
                     ),
                     Text(
                       "Farhan",
                       // login.user.name,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontFamily: 'serif',
                           fontWeight: FontWeight.bold,
                           fontSize: 30.0),
                     ),
-                    const Text(
+                    Text(
                       "User",
                       style: TextStyle(
                           fontFamily: 'serif',
@@ -119,20 +118,20 @@ class _UserProfileState extends State<UserProfile> {
                           fontSize: 15.0,
                           letterSpacing: 2.5),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     // ignore: prefer_const_constructors
                     Card(
-                      shape: const StadiumBorder(
+                      shape: StadiumBorder(
                         side: BorderSide(
                           color: Color(0xffFFA45B),
                           width: 2.0,
                         ),
                       ),
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 5.0, horizontal: 25.0),
-                      child: const ListTile(
+                      margin:
+                          EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
+                      child: ListTile(
                         leading: Icon(
                           FontAwesomeIcons.solidIdCard,
                           color: Colors.black87,
@@ -141,7 +140,7 @@ class _UserProfileState extends State<UserProfile> {
                         title: Text("98563"),
                       ),
                     ),
-                    const Card(
+                    Card(
                       shape: StadiumBorder(
                         side: BorderSide(
                           color: Color(0xffFFA45B),
@@ -159,7 +158,7 @@ class _UserProfileState extends State<UserProfile> {
                         title: Text("Farhan@test.com"),
                       ),
                     ),
-                    const Card(
+                    Card(
                       shape: StadiumBorder(
                         side: BorderSide(
                           color: Color(0xffFFA45B),
@@ -170,7 +169,7 @@ class _UserProfileState extends State<UserProfile> {
                           EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
                       child: ListTile(
                         // ignore: unnecessary_const
-                        leading: const Icon(
+                        leading: Icon(
                           FontAwesomeIcons.squarePhone,
                           color: Colors.black87,
                         ),
@@ -178,7 +177,7 @@ class _UserProfileState extends State<UserProfile> {
                         title: Text("082134523453"),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     // button
@@ -191,8 +190,8 @@ class _UserProfileState extends State<UserProfile> {
       ),
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
-        backgroundColor: Color(0xffFFA45B),
-        overlayColor: Color.fromARGB(255, 241, 215, 195),
+        backgroundColor: const Color(0xffFFA45B),
+        overlayColor: const Color.fromARGB(255, 241, 215, 195),
         overlayOpacity: 0.4,
         spacing: 10,
         children: [
