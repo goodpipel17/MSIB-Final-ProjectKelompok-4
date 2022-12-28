@@ -3,7 +3,7 @@ import 'package:final_project_kel_4/view/Keranjang_screen.dart';
 
 import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
-import 'package:final_project_kel_4/view/sepatu_screen.dart';
+import 'package:final_project_kel_4/view/Cake_screens.dart';
 import 'package:final_project_kel_4/view/sweater_screen.dart';
 import 'package:final_project_kel_4/view/user_profile.dart';
 import 'package:final_project_kel_4/view/wishlist_screen.dart';
@@ -12,8 +12,8 @@ import 'package:provider/provider.dart';
 
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
-import 'baju_screen.dart';
-import 'celana_screen.dart';
+import 'Lapis_Screens.dart';
+import 'Brownis_Screens.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
