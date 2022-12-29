@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:final_project_kel_4/view/login_screen.dart';
 import 'package:final_project_kel_4/models/register_model/register_model.dart';
 import 'package:final_project_kel_4/view/success_screen.dart';
 import 'package:final_project_kel_4/view_models/register_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -14,12 +17,13 @@ class Createproduct extends StatefulWidget {
 }
 
 class _CreateProductState extends State<Createproduct> {
-  final TextEditingController username = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _handphoneController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordConfirmController =
-      TextEditingController();
+  File? image;
+
+  final TextEditingController name = TextEditingController();
+  final TextEditingController _stockController = TextEditingController();
+  final TextEditingController _categoryidController = TextEditingController();
+  final TextEditingController _deskripsiController = TextEditingController();
+  final TextEditingController _hargaController = TextEditingController();
   bool _obscure = true;
 
   @override
@@ -63,7 +67,7 @@ class _CreateProductState extends State<Createproduct> {
             child: Column(
               children: <Widget>[
                 TextFormField(
-                  controller: username,
+                  controller: name,
                   decoration: InputDecoration(
                     fillColor: Colors.white,
                     filled: true,
@@ -86,7 +90,7 @@ class _CreateProductState extends State<Createproduct> {
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
-                  controller: _handphoneController,
+                  controller: _categoryidController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -109,7 +113,7 @@ class _CreateProductState extends State<Createproduct> {
                 ),
                 TextFormField(
                   keyboardType: TextInputType.number,
-                  controller: _handphoneController,
+                  controller: _stockController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -131,7 +135,7 @@ class _CreateProductState extends State<Createproduct> {
                   height: 8,
                 ),
                 TextFormField(
-                  controller: _emailController,
+                  controller: _hargaController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -153,7 +157,7 @@ class _CreateProductState extends State<Createproduct> {
                   height: 8,
                 ),
                 TextFormField(
-                  controller: _emailController,
+                  controller: _deskripsiController,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -182,11 +186,11 @@ class _CreateProductState extends State<Createproduct> {
                         try {
                           await register
                               .postRegister(RegisterModel(
-                                  email: _emailController.text,
-                                  handphone: _handphoneController.text,
-                                  name: username.text,
-                                  password: _passwordController.text,
-                                  rePassword: _passwordConfirmController.text))
+                                  email: name.text,
+                                  handphone: _hargaController.text,
+                                  name: _categoryidController.text,
+                                  password: _stockController.text,
+                                  rePassword: _deskripsiController.text))
                               .then((value) => Fluttertoast.showToast(
                                   msg: 'berhasil register'));
                         } catch (e) {
@@ -228,4 +232,26 @@ class _CreateProductState extends State<Createproduct> {
       ),
     );
   }
+}
+
+Future<File?> pickImage(BuildContext? context, {bool camera = false}) async {
+  try {
+    final XFile? file = await ImagePicker().pickImage(
+      source: camera ? ImageSource.camera : ImageSource.gallery,
+    );
+    return File(file!.path);
+  } catch (e) {
+    showDialog(
+      context: context!,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Error"),
+          content: Text(
+            e.toString(),
+          ),
+        );
+      },
+    );
+  }
+  return null;
 }
