@@ -88,7 +88,7 @@ class _MenuPageState extends State<MenuPage> {
         backgroundColor: Colors.white,
         centerTitle: false,
         title: const Text(
-          'Hello, Username !',
+          'welcome to E-Pahlawan',
           style: TextStyle(
             fontFamily: "Serif",
             fontWeight: FontWeight.bold,

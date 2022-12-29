@@ -75,39 +75,9 @@ class _CreateProductState extends State<Createproduct> {
                         borderRadius: BorderRadius.circular(50.0),
                         borderSide: const BorderSide(
                             color: Color(0xffFFA45B), width: 1.0)),
-                    hintText: 'Name',
+                    hintText: 'Name Of product',
                     hintStyle: const TextStyle(
                       fontFamily: "Serif",
-                    ),
-                    prefixIcon: const Icon(
-                      Icons.person,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                        borderSide: const BorderSide(
-                            color: Color(0xffFFA45B), width: 1.0)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                        borderSide: const BorderSide(
-                            color: Color(0xffFFA45B), width: 1.0)),
-                    hintText: 'Category ID',
-                    hintStyle: const TextStyle(
-                      fontFamily: "Serif",
-                    ),
-                    prefixIcon: const Icon(
-                      Icons.email_outlined,
-                      color: Colors.black87,
                     ),
                   ),
                 ),
@@ -128,13 +98,76 @@ class _CreateProductState extends State<Createproduct> {
                         borderRadius: BorderRadius.circular(50.0),
                         borderSide: const BorderSide(
                             color: Color(0xffFFA45B), width: 1.0)),
-                    hintText: 'Handphone',
+                    hintText: 'Category ID',
                     hintStyle: const TextStyle(
                       fontFamily: "Serif",
                     ),
-                    prefixIcon: const Icon(
-                      Icons.phone_android,
-                      color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  controller: _handphoneController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Stock',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Price',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                TextFormField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: const BorderSide(
+                            color: Color(0xffFFA45B), width: 1.0)),
+                    hintText: 'Deskripsi',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Serif",
                     ),
                   ),
                 ),
@@ -176,7 +209,7 @@ class _CreateProductState extends State<Createproduct> {
                               maxWidth: 400.0, minHeight: 50.0),
                           alignment: Alignment.center,
                           child: const Text(
-                            "SIGN UP",
+                            "SUBMIT",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Colors.white,

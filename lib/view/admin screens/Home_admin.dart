@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_project_kel_4/view/Brownis_Screens.dart';
 import 'package:final_project_kel_4/view/Cake_screens.dart';
 import 'package:final_project_kel_4/view/admin%20screens/detail_admin.dart';
+import 'package:final_project_kel_4/view/admin%20screens/search_admin.dart';
 import 'package:final_project_kel_4/view/detail_screen.dart';
 import 'package:final_project_kel_4/view/keranjang_screen.dart';
 import 'package:final_project_kel_4/view/lapis_screen.dart';
@@ -104,7 +105,7 @@ class _MenuPageState extends State<homeadmin> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SearchScreen()),
+                  MaterialPageRoute(builder: (context) => const searchadmin()),
                 );
               },
               icon: const Icon(

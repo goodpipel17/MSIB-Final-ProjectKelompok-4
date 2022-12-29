@@ -110,6 +110,7 @@ class Detailadmin extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               IconButton(
+                                color: Colors.redAccent.shade700,
                                 onPressed: () async {
                                   try {
                                     await wishlist.postWishlist({
@@ -120,7 +121,7 @@ class Detailadmin extends StatelessWidget {
                                     Fluttertoast.showToast(msg: e.toString());
                                   }
                                 },
-                                icon: const Icon(Icons.favorite),
+                                icon: const Icon(Icons.delete_forever_rounded),
                               ),
                             ],
                           ),
@@ -182,10 +183,7 @@ class Detailadmin extends StatelessWidget {
                             child: Ink(
                               decoration: BoxDecoration(
                                 gradient: const LinearGradient(
-                                  colors: [
-                                    Color(0xffFFA45B),
-                                    Color(0xffFFDA77)
-                                  ],
+                                  colors: [Colors.green, Colors.greenAccent],
                                   begin: Alignment.centerLeft,
                                   end: Alignment.centerRight,
                                 ),
@@ -198,7 +196,7 @@ class Detailadmin extends StatelessWidget {
                                 ),
                                 alignment: Alignment.center,
                                 child: const Text(
-                                  "Add to Cart",
+                                  "Update Products",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Colors.black,
