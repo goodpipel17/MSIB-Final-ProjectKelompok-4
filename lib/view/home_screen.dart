@@ -7,18 +7,13 @@ import 'package:final_project_kel_4/view/detail_screen.dart';
 import 'package:final_project_kel_4/view/keranjang_screen.dart';
 import 'package:final_project_kel_4/view/lapis_screen.dart';
 
-import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
-import 'package:final_project_kel_4/view/Cake_screens.dart';
-import 'package:final_project_kel_4/view/sweater_screen.dart';
-import 'package:final_project_kel_4/view/user_profile.dart';
-import 'package:final_project_kel_4/view/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
-import 'Brownis_Screens.dart';
+import '../view_models/user_view_model.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -35,12 +30,15 @@ class _MenuPageState extends State<MenuPage> {
   @override
   void initState() {
     super.initState();
+    Provider.of<UserViewModel>(context, listen: false).saveUserDetail();
+    setState(() {
+      Future.microtask(
+        () => Provider.of<ProductViewModel>(context, listen: false)
+            .fetchProductByCategoryName("kue4_"),
+      );
+    });
 
-    Future.microtask(
-      () => Provider.of<ProductViewModel>(context, listen: false)
-          .fetchProductByCategoryName("kue4"),
-    );
-    init();
+    // init();
   }
 
   @override
@@ -64,6 +62,10 @@ class _MenuPageState extends State<MenuPage> {
     // final products = await ProductApi().searchProduct(query);
     // ignore: await_only_futures
     final products = await ProductViewModel().listProductByCategory;
+    // Future.microtask(
+    //   () => Provider.of<ProductViewModel>(context, listen: false)
+    //       .fetchProductByCategoryName("kue4_"),
+    // );
 
     // ignore: unnecessary_this
     setState(() => this._products = products);

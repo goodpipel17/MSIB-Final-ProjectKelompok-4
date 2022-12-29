@@ -21,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   bool _obscure = true;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final String checklogin = "Admin 2";
 
   @override
   Widget build(BuildContext context) {
