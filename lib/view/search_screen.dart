@@ -1,11 +1,13 @@
 import 'dart:async';
 
+import 'package:final_project_kel_4/view/detail_screen.dart';
 import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:final_project_kel_4/view/search_widget.dart';
 import 'package:final_project_kel_4/models/product_model/productmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../models/product_model/api/product_api.dart';
 import '../view_models/product_view_model.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -26,11 +28,11 @@ class SearchScreenState extends State<SearchScreen> {
     super.initState();
     Future.microtask(
       () => Provider.of<ProductViewModel>(context, listen: false)
-          .fetchProductByCategoryName("k2"),
+          .fetchProductByCategoryName("kue4"),
     );
     Future.microtask(
       () => Provider.of<ProductViewModel>(context, listen: false)
-          .searchProductByName("k2"),
+          .searchProductByName("kue4"),
     );
     init();
   }
@@ -86,11 +88,11 @@ class SearchScreenState extends State<SearchScreen> {
           elevation: 2,
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
-              stops: const [
+              stops: [
                 0.4,
                 0.9,
               ],
@@ -151,17 +153,21 @@ class SearchScreenState extends State<SearchScreen> {
       GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => ProductDetail(product: product)));
+              builder: (context) => DetailScreen(product: product)));
         },
-        child: ListTile(
-          leading: Image.network(
-            product.img,
-            fit: BoxFit.cover,
-            width: 50,
-            height: 50,
+        child: Material(
+          elevation: 3,
+          shadowColor: Colors.black,
+          child: ListTile(
+            leading: Image.network(
+              product.img,
+              fit: BoxFit.cover,
+              width: 50,
+              height: 50,
+            ),
+            title: Text(product.name),
+            subtitle: Text(product.category.name),
           ),
-          title: Text(product.name),
-          subtitle: Text(product.category.name),
         ),
       );
 }

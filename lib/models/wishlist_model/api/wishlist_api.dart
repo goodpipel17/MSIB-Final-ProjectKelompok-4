@@ -10,7 +10,7 @@ class WishlistApi {
     String token = prefs.getString('token').toString();
     try {
       await http.post(
-        Uri.parse('https://api1.sib3.nurulfikri.com/api/wishlist'),
+        Uri.parse('https://aki.nurulfikri.com/api/wishlist'),
         body: data,
         headers: {
           'Authorization': 'Bearer $token',
@@ -22,7 +22,7 @@ class WishlistApi {
   }
 
   Future<List<WishListModel>> getWishlist() async {
-    Uri url = Uri.parse("https://api1.sib3.nurulfikri.com/api/wishlist");
+    Uri url = Uri.parse("https://aki.nurulfikri.com/api/wishlist");
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 

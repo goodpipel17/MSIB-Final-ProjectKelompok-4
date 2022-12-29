@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:final_project_kel_4/view/detail_screen.dart';
 import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,15 +7,15 @@ import 'package:provider/provider.dart';
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
 
-class CelanaScreen extends StatefulWidget {
+class BrownisScreen extends StatefulWidget {
   final String categoryName;
-  const CelanaScreen({super.key, required this.categoryName});
+  const BrownisScreen({super.key, required this.categoryName});
 
   @override
-  State<CelanaScreen> createState() => _CelanaScreenState();
+  State<BrownisScreen> createState() => _BrownisScreenState();
 }
 
-class _CelanaScreenState extends State<CelanaScreen> {
+class _BrownisScreenState extends State<BrownisScreen> {
   @override
   void initState() {
     super.initState();
@@ -29,24 +30,23 @@ class _CelanaScreenState extends State<CelanaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
-          'Category Celana',
+          'Category Brownis',
           style: TextStyle(
               fontFamily: "Serif",
               fontWeight: FontWeight.bold,
-              shadows: [
-                Shadow(
-                  color: Colors.black,
-                  blurRadius: 10.0,
-                  offset: Offset(1.0, 3.0),
-                ),
-                Shadow(
-                  color: Color.fromARGB(255, 71, 147, 248),
-                  blurRadius: 10.0,
-                  offset: Offset(-5.0, 5.0),
-                ),
-              ]),
+              color: Colors.black),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.black87,
+          ),
         ),
       ),
       body: Container(
@@ -58,10 +58,7 @@ class _CelanaScreenState extends State<CelanaScreen> {
               0.4,
               0.9,
             ],
-            colors: [
-              const Color.fromARGB(255, 133, 180, 255),
-              Colors.grey.shade300
-            ],
+            colors: [Colors.white, Colors.grey.shade50],
           ),
         ),
         child: ListView(
@@ -110,11 +107,12 @@ Widget _cardProduct(ProductModel product, BuildContext context) {
   return GestureDetector(
     onTap: () {
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ProductDetail(product: product)));
+          builder: (context) => DetailScreen(product: product)));
     },
     child: Card(
       color: const Color.fromARGB(129, 255, 255, 255),
-      elevation: 0,
+      elevation: 1,
+      shadowColor: Colors.black45,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),

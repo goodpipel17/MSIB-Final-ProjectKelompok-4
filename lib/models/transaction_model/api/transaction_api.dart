@@ -9,7 +9,7 @@ class TransactionApi {
     String token = prefs.getString('token').toString();
     try {
       await http.post(
-        Uri.parse('https://api1.sib3.nurulfikri.com/api/transaksi'),
+        Uri.parse('https://aki.nurulfikri.com/api/transaksi'),
         body: data,
         headers: {
           'Authorization': 'Bearer $token',

@@ -8,7 +8,7 @@ class LoginApi {
   Future<String> postLogin(LoginModel login) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    var url = Uri.parse("https://api1.sib3.nurulfikri.com/api/login");
+    var url = Uri.parse("https://aki.nurulfikri.com/api/login");
 
     var response = await http.post(url, body: login.toJson());
     if (response.statusCode == 200) {
@@ -21,6 +21,8 @@ class LoginApi {
           'phone', json.decode(response.body)['data']['user']['handphone']);
       prefs.setString(
           'email', json.decode(response.body)['data']['user']['email']);
+      prefs.setString(
+          'role', json.decode(response.body)['data']['user']['role']);
       prefs.setString(
           'name', json.decode(response.body)['data']['user']['name']);
       return json.decode(response.body)['info'];

@@ -10,7 +10,7 @@ class KeranjangViewModel extends ChangeNotifier {
     try {
       await keranjangApi.postKeranjang(data);
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 
@@ -19,7 +19,7 @@ class KeranjangViewModel extends ChangeNotifier {
       listkeranjang = await keranjangApi.getKeranjang();
       notifyListeners();
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 }

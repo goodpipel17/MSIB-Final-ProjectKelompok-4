@@ -1,5 +1,11 @@
+import 'dart:async';
+
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:final_project_kel_4/view/Keranjang_screen.dart';
+import 'package:final_project_kel_4/view/Brownis_Screens.dart';
+import 'package:final_project_kel_4/view/Cake_screens.dart';
+import 'package:final_project_kel_4/view/detail_screen.dart';
+import 'package:final_project_kel_4/view/keranjang_screen.dart';
+import 'package:final_project_kel_4/view/lapis_screen.dart';
 
 import 'package:final_project_kel_4/view/product_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
@@ -12,7 +18,6 @@ import 'package:provider/provider.dart';
 
 import '../models/product_model/productmodel.dart';
 import '../view_models/product_view_model.dart';
-import 'Lapis_Screens.dart';
 import 'Brownis_Screens.dart';
 
 class MenuPage extends StatefulWidget {
@@ -23,15 +28,57 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  String query = '';
+  List<ProductModel> _products = [];
+  List<ProductModel> get products => _products;
+  Timer? debouncer;
   @override
   void initState() {
     super.initState();
 
     Future.microtask(
       () => Provider.of<ProductViewModel>(context, listen: false)
-          .fetchProductByCategoryName("k2"),
+          .fetchProductByCategoryName("kue4"),
     );
+    init();
   }
+
+  @override
+  void dispose() {
+    debouncer?.cancel();
+    super.dispose();
+  }
+
+  void debounce(
+    VoidCallback callback, {
+    Duration duration = const Duration(milliseconds: 1000),
+  }) {
+    if (debouncer != null) {
+      debouncer!.cancel();
+    }
+
+    debouncer = Timer(duration, callback);
+  }
+
+  Future init() async {
+    // final products = await ProductApi().searchProduct(query);
+    // ignore: await_only_futures
+    final products = await ProductViewModel().listProductByCategory;
+
+    // ignore: unnecessary_this
+    setState(() => this._products = products);
+  }
+
+  Future reloadpage(String query) async => debounce(() async {
+        Provider.of<ProductViewModel>(context, listen: false)
+            .searchProductByName(query);
+
+        if (!mounted) return;
+
+        setState(() {
+          this.query = query;
+        });
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -84,31 +131,166 @@ class _MenuPageState extends State<MenuPage> {
         ],
       ),
       body: Container(
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.topRight,
-        //     end: Alignment.bottomLeft,
-        //     stops: const [
-        //       0.4,
-        //       0.9,
-        //     ],
-        //     colors: [
-        //       const Color.fromARGB(255, 133, 180, 255),
-        //       Colors.grey.shade300
-        //     ],
-        //   ),
-        // ),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            stops: const [
+              0.4,
+              0.9,
+            ],
+            colors: [Colors.white, Colors.grey.shade50],
+          ),
+        ),
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(16),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const Text(
+                    'Categories',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const BrownisScreen(
+                                    categoryName: "kue4_brownis"),
+                              ),
+                            );
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80.0)),
+                          padding: const EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xffFFA45B),
+                                    Color(0xffFFDA77)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: const BoxConstraints(
+                                maxWidth: 80.0,
+                                minHeight: 30.0,
+                              ),
+                              child: const Text(
+                                "Brownis",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Serif",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const CakeScreen(categoryName: "kue4_cake"),
+                              ),
+                            );
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80.0)),
+                          padding: const EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xffFFA45B),
+                                    Color(0xffFFDA77)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: const BoxConstraints(
+                                maxWidth: 65.0,
+                                minHeight: 30.0,
+                              ),
+                              child: const Text(
+                                "Cake",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Serif",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LapisScreen(
+                                    categoryName: "kue4_lapis"),
+                              ),
+                            );
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(80.0)),
+                          padding: const EdgeInsets.all(0.0),
+                          child: Ink(
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xffFFA45B),
+                                    Color(0xffFFDA77)
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                borderRadius: BorderRadius.circular(30.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              constraints: const BoxConstraints(
+                                maxWidth: 65.0,
+                                minHeight: 30.0,
+                              ),
+                              child: const Text(
+                                "Lapis",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "Serif",
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   // ===== MENU =====
                   const SizedBox(
                     height: 8,
                   ),
-                  // _listOfProducts(),
+                  _listOfProducts(),
                 ],
               ),
             ),
@@ -120,22 +302,39 @@ class _MenuPageState extends State<MenuPage> {
 
   Widget _listOfProducts() {
     return Consumer<ProductViewModel>(
-      builder: (context, product, _) => Column(
-        children: [
-          GridView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: product.listProductByCategory.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+      builder: (context, product, _) => query == ''
+          ? Column(
+              children: [
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: product.listProductByCategory.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  itemBuilder: (context, index) {
+                    final data = product.listProductByCategory[index];
+                    return _cardProduct(data, context);
+                  },
+                ),
+              ],
+            )
+          : Column(
+              children: [
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: product.listProductByCategory.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
+                  itemBuilder: (context, index) {
+                    final data = product.listProductByCategory[index];
+                    return _cardProduct(data, context);
+                  },
+                ),
+              ],
             ),
-            itemBuilder: (context, index) {
-              final data = product.listProductByCategory[index];
-              return _cardProduct(data, context);
-            },
-          ),
-        ],
-      ),
     );
   }
 }
@@ -144,11 +343,12 @@ Widget _cardProduct(ProductModel product, BuildContext context) {
   return GestureDetector(
     onTap: () {
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ProductDetail(product: product)));
+          builder: (context) => DetailScreen(product: product)));
     },
     child: Card(
-      color: const Color.fromARGB(129, 255, 255, 255),
-      elevation: 0,
+      elevation: 1,
+      shadowColor: Colors.black45,
+      color: Colors.grey.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),

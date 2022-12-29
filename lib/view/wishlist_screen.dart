@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_project_kel_4/models/wishlist_model/wishlist_model.dart';
-import 'package:final_project_kel_4/view/Keranjang_screen.dart';
+import 'package:final_project_kel_4/view/keranjang_screen.dart';
 import 'package:final_project_kel_4/view/search_screen.dart';
 import 'package:final_project_kel_4/view_models/keranjang_view_model.dart';
 import 'package:final_project_kel_4/view_models/wishlist_view_model.dart';
@@ -81,7 +81,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
               0.4,
               0.9,
             ],
-            colors: [Colors.white, Colors.grey.shade300],
+            colors: [Colors.white, Colors.grey.shade50],
           ),
         ),
         child: ListView(children: [
@@ -180,7 +180,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                       height: 10,
                     ),
                     CircleAvatar(
-                      backgroundColor: Colors.green.shade200,
+                      backgroundColor: Color(0xffFFA45B),
                       child: IconButton(
                           onPressed: () async {
                             try {
@@ -196,7 +196,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                           icon: const Icon(
                             Icons.shopping_cart_checkout,
                             size: 20,
-                            color: Colors.green,
+                            color: Colors.white,
                           )),
                     ),
                     const SizedBox(

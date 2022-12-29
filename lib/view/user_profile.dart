@@ -1,4 +1,3 @@
-import 'package:final_project_kel_4/view/bottomnav.dart';
 import 'package:final_project_kel_4/view/info_screen.dart';
 import 'package:final_project_kel_4/view_models/user_view_model.dart';
 import 'package:flutter/material.dart';
@@ -84,7 +83,7 @@ class _UserProfileState extends State<UserProfile> {
               0.4,
               0.9,
             ],
-            colors: [Colors.white, Colors.grey.shade300],
+            colors: [Colors.white, Colors.grey.shade50],
           ),
         ),
         child: Center(
@@ -104,8 +103,7 @@ class _UserProfileState extends State<UserProfile> {
                       height: 10,
                     ),
                     Text(
-                      "Farhan",
-                      // login.user.name,
+                      login.user.name,
                       style: const TextStyle(
                           fontFamily: 'serif',
                           fontWeight: FontWeight.bold,
@@ -122,7 +120,6 @@ class _UserProfileState extends State<UserProfile> {
                     const SizedBox(
                       height: 20,
                     ),
-                    // ignore: prefer_const_constructors
                     Card(
                       shape: const StadiumBorder(
                         side: BorderSide(
@@ -132,56 +129,49 @@ class _UserProfileState extends State<UserProfile> {
                       ),
                       margin: const EdgeInsets.symmetric(
                           vertical: 5.0, horizontal: 25.0),
-                      child: const ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.solidIdCard,
-                          color: Colors.black87,
-                        ),
-                        // title: Text(login.user.id.toString()),
-                        title: Text("98563"),
-                      ),
-                    ),
-                    const Card(
-                      shape: StadiumBorder(
-                        side: BorderSide(
-                          color: Color(0xffFFA45B),
-                          width: 2.0,
-                        ),
-                      ),
-                      margin:
-                          EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
                       child: ListTile(
-                        leading: Icon(
-                          Icons.email_rounded,
-                          color: Colors.black87,
-                        ),
-                        // title: Text(login.user.email),
-                        title: Text("Farhan@test.com"),
-                      ),
-                    ),
-                    const Card(
-                      shape: StadiumBorder(
-                        side: BorderSide(
-                          color: Color(0xffFFA45B),
-                          width: 2.0,
-                        ),
-                      ),
-                      margin:
-                          EdgeInsets.symmetric(vertical: 5.0, horizontal: 25.0),
-                      child: ListTile(
-                        // ignore: unnecessary_const
                         leading: const Icon(
-                          FontAwesomeIcons.squarePhone,
-                          color: Colors.black87,
+                          FontAwesomeIcons.solidIdCard,
+                          color: Colors.black,
                         ),
-                        // title: Text(login.user.handphone),
-                        title: Text("082134523453"),
+                        title: Text(login.user.id.toString()),
+                      ),
+                    ),
+                    Card(
+                      shape: const StadiumBorder(
+                        side: BorderSide(
+                          color: Color(0xffFFA45B),
+                          width: 2.0,
+                        ),
+                      ),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 5.0, horizontal: 25.0),
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.email_rounded,
+                          color: Colors.black,
+                        ),
+                        title: Text(login.user.email),
+                      ),
+                    ),
+                    Card(
+                      shape: const StadiumBorder(
+                        side: BorderSide(
+                          color: Color(0xffFFA45B),
+                          width: 2.0,
+                        ),
+                      ),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 5.0, horizontal: 25.0),
+                      child: ListTile(
+                        leading: const Icon(FontAwesomeIcons.squarePhone,
+                            color: Colors.black),
+                        title: Text(login.user.handphone),
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    // button
                   ],
                 ),
               )),
@@ -191,8 +181,8 @@ class _UserProfileState extends State<UserProfile> {
       ),
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
-        backgroundColor: Color(0xffFFA45B),
-        overlayColor: Color.fromARGB(255, 241, 215, 195),
+        backgroundColor: const Color(0xffFFA45B),
+        overlayColor: const Color.fromARGB(255, 241, 215, 195),
         overlayOpacity: 0.4,
         spacing: 10,
         children: [

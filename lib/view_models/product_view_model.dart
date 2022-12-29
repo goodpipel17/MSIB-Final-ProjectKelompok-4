@@ -18,7 +18,7 @@ class ProductViewModel with ChangeNotifier {
       _listProduct = await productApi.getProduct();
       notifyListeners();
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 
@@ -27,7 +27,7 @@ class ProductViewModel with ChangeNotifier {
       _listProductByCategory = await productApi.getProductByCategoryName(value);
       notifyListeners();
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 
@@ -36,7 +36,7 @@ class ProductViewModel with ChangeNotifier {
       _listProductSearch = await productApi.searchProduct(search);
       notifyListeners();
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 }

@@ -49,7 +49,7 @@ class Info extends StatelessWidget {
           ),
           Center(
             child: Text(
-              'E-Pahlawan adalah marketplace yang menyediakan Legit Surabaya. Legit Sruabaya merupakan persembahan dari Surabaya untuk Indonesia. Merupakan Lapis Legit dengan cita rasa khas Nusantara yang benar-benar legit dan nikmat, karena dibuat menggunakan bahan-bahan terbaik. Kami menyediakan layanan mudah dan praktis, sehingga anda dapat merasakan kenikmatan Legit Surabaya semudah menjentikkan jari',
+              'E-Pahlawan adalah marketplace yang menyediakan Lapis Pahlawan. Lapis Pahlawan merupakan persembahan dari Surabaya untuk Indonesia. Merupakan Lapis kukus dengan cita rasa khas Nusantara yang benar-benar legit dan nikmat, karena dibuat menggunakan bahan-bahan terbaik. Kami menyediakan layanan mudah dan praktis, sehingga anda dapat merasakan kenikmatan lapis Pahlawan semudah menjentikkan jari',
               textAlign: TextAlign.justify,
               style: TextStyle(
                 fontSize: 13.0,
@@ -106,11 +106,11 @@ class Info extends StatelessWidget {
             offset: Offset(4, 3), // Shadow position
           ),
           onPressed: () {
-            launchUrl(Uri.parse('https://www.facebook.com/ShopatGOSHOP/'));
+            launchUrl(Uri.parse('https://lapispahlawan.co.id/'));
           },
-          text: "Facebook",
+          text: "Website",
           textColor: Colors.black,
-          icon: const Icon(Icons.facebook),
+          icon: const Icon(Icons.web_asset_outlined),
           shape: GFButtonShape.pills,
           color: Colors.blue.shade400,
         ),
@@ -123,13 +123,16 @@ class Info extends StatelessWidget {
             blurRadius: 2,
             offset: Offset(4, 3), // Shadow position
           ),
-          color: Colors.blue.shade200,
+          color: Colors.black,
           onPressed: () {
-            launchUrl(Uri.parse('https://twitter.com/shopatgoshop'));
+            launchUrl(Uri.parse('https://www.tiktok.com/@lkspahlawan'));
           },
-          text: "Twitter",
-          textColor: Colors.black,
-          icon: const Icon(FontAwesomeIcons.twitter),
+          text: "Tiktok",
+          textColor: Colors.white,
+          icon: const Icon(
+            FontAwesomeIcons.tiktok,
+            color: Color.fromARGB(245, 252, 252, 252),
+          ),
           shape: GFButtonShape.pills,
         ),
         const SizedBox(
@@ -143,7 +146,7 @@ class Info extends StatelessWidget {
           ),
           onPressed: () {
             launchUrl(
-                Uri.parse('https://www.instagram.com/shopatgoshop/?hl=en'));
+                Uri.parse('https://www.instagram.com/lkspahlawan/?hl=en'));
           },
           text: "Instagram",
           textColor: Colors.black,

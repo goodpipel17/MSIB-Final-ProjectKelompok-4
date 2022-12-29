@@ -60,7 +60,7 @@ class _CartScreenState extends State<CartScreen> {
               0.4,
               0.9,
             ],
-            colors: [Colors.white, Colors.grey.shade300],
+            colors: [Colors.white, Colors.grey.shade50],
           ),
         ),
         child: ListView(
@@ -173,6 +173,14 @@ class _CartScreenState extends State<CartScreen> {
               width: MediaQuery.of(context).size.width - 20.0,
               height: 150.0,
               decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      // offset: const Offset(1, 1),
+                      // spreadRadius: 0.25,
+                      blurRadius: 1.0,
+                    ),
+                  ],
                   color: Colors.white54,
                   borderRadius: BorderRadius.circular(10.0)),
               child: Row(

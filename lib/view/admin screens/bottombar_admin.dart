@@ -1,20 +1,20 @@
 import 'package:final_project_kel_4/view/admin%20screens/Home_admin.dart';
-import 'package:final_project_kel_4/view/home_screen.dart';
-import 'package:final_project_kel_4/view/user_profile.dart';
-import 'package:final_project_kel_4/view/wishlist_screen.dart';
+import 'package:final_project_kel_4/view/admin%20screens/create_product_screens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class BottomNav extends StatefulWidget {
-  const BottomNav({super.key});
+class BottomBarAdmin extends StatefulWidget {
+  const BottomBarAdmin({super.key});
 
   @override
-  State<BottomNav> createState() => _BottomNavState();
+  State<BottomBarAdmin> createState() => _BottomBarAdminState();
 }
 
-class _BottomNavState extends State<BottomNav> {
+class _BottomBarAdminState extends State<BottomBarAdmin> {
   final List widgetOptions = const [
     homeadmin(),
-    
+    Createproduct(),
   ];
   int _selectedIndex = 0;
 
@@ -41,14 +41,14 @@ class _BottomNavState extends State<BottomNav> {
                   size: 32,
                   color: Color(0xffFFA45B),
                 ),
-                label: 'Home'),
+                label: 'Beranda'),
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.bookmark,
+                  Icons.shopping_basket,
                   size: 32,
                   color: Color(0xffFFA45B),
                 ),
-                label: 'Wishlist'),
+                label: 'Produk'),
           ],
           currentIndex: _selectedIndex,
           unselectedItemColor: const Color(0xffFFA45B),

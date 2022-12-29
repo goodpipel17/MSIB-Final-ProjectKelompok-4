@@ -1,5 +1,6 @@
 import 'package:final_project_kel_4/view/login_screen.dart';
 import 'package:final_project_kel_4/models/register_model/register_model.dart';
+import 'package:final_project_kel_4/view/success_screen.dart';
 import 'package:final_project_kel_4/view_models/register_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +44,7 @@ class _CreateProductState extends State<Createproduct> {
           Container(
             padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
             child: const Text(
-              "SIGN UP",
+              "Create a new products",
               style: TextStyle(
                   color: Color(0xff252525),
                   fontFamily: "Serif",
@@ -53,15 +54,6 @@ class _CreateProductState extends State<Createproduct> {
           ),
           const SizedBox(
             height: 2,
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
-            child: const Text("Create a new account",
-                style: TextStyle(
-                    color: Color(0xff252525),
-                    fontFamily: "Serif",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16)),
           ),
           const SizedBox(
             height: 16,
@@ -109,7 +101,7 @@ class _CreateProductState extends State<Createproduct> {
                         borderRadius: BorderRadius.circular(50.0),
                         borderSide: const BorderSide(
                             color: Color(0xffFFA45B), width: 1.0)),
-                    hintText: 'Email',
+                    hintText: 'Category ID',
                     hintStyle: const TextStyle(
                       fontFamily: "Serif",
                     ),
@@ -147,84 +139,6 @@ class _CreateProductState extends State<Createproduct> {
                   ),
                 ),
                 const SizedBox(
-                  height: 8,
-                ),
-                TextFormField(
-                  controller: _passwordController,
-                  obscureText: _obscure,
-                  decoration: InputDecoration(
-                    fillColor: Colors.white,
-                    filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                        borderSide: const BorderSide(
-                            color: Color(0xffFFA45B), width: 1.0)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                        borderSide: const BorderSide(
-                            color: Color(0xffFFA45B), width: 1.0)),
-                    hintText: 'Password',
-                    hintStyle: const TextStyle(
-                      fontFamily: "Serif",
-                    ),
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          if (_obscure) {
-                            _obscure = false;
-                          } else {
-                            _obscure = true;
-                          }
-                        });
-                      },
-                      icon: const Icon(Icons.remove_red_eye),
-                    ),
-                    prefixIcon: const Icon(
-                      Icons.lock,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                TextFormField(
-                  controller: _passwordConfirmController,
-                  obscureText: _obscure,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                        borderSide: const BorderSide(
-                            color: Color(0xffFFA45B), width: 1.0)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                        borderSide: const BorderSide(
-                            color: Color(0xffFFA45B), width: 1.0)),
-                    hintText: 'Confirm Password',
-                    hintStyle: const TextStyle(
-                      fontFamily: "Serif",
-                    ),
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          if (_obscure) {
-                            _obscure = false;
-                          } else {
-                            _obscure = true;
-                          }
-                        });
-                      },
-                      icon: const Icon(Icons.remove_red_eye),
-                    ),
-                    prefixIcon: const Icon(
-                      Icons.lock,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-                const SizedBox(
                   height: 16,
                 ),
                 SizedBox(
@@ -240,18 +154,8 @@ class _CreateProductState extends State<Createproduct> {
                                   name: username.text,
                                   password: _passwordController.text,
                                   rePassword: _passwordConfirmController.text))
-                              .then(
-                                (value) => Fluttertoast.showToast(
-                                        msg: 'berhasil register')
-                                    .then(
-                                  (value) =>
-                                      Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const LoginPage()),
-                                  ),
-                                ),
-                              );
+                              .then((value) => Fluttertoast.showToast(
+                                  msg: 'berhasil register'));
                         } catch (e) {
                           Fluttertoast.showToast(msg: e.toString());
                         }
@@ -284,38 +188,6 @@ class _CreateProductState extends State<Createproduct> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text(
-                      'Already have an account? ',
-                      style: TextStyle(
-                        fontFamily: "Serif",
-                      ),
-                    ),
-                    const SizedBox(width: 1.0),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const LoginPage()));
-                      },
-                      child: const Center(
-                        child: Text('Sign In',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Serif",
-                              color: Color.fromARGB(455, 68, 85, 195),
-                            )),
-                      ),
-                    ),
-                  ],
-                )
               ],
             ),
           ),

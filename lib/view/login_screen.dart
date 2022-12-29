@@ -1,3 +1,4 @@
+import 'package:final_project_kel_4/view/admin%20screens/bottombar_admin.dart';
 import 'package:final_project_kel_4/view/bottomnav.dart';
 import 'package:final_project_kel_4/view/signup_screen.dart';
 import 'package:final_project_kel_4/models/login_model/login_model.dart';
@@ -20,6 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   bool _obscure = true;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final String checklogin = "Admin 2";
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       '/signup': (BuildContext context) => const SignUpPage()
     };
     Widget logo = const CircleAvatar(
-      backgroundColor: Color.fromARGB(455, 455, 455, 455),
+      backgroundColor: Colors.white,
       radius: 100,
       child: CircleAvatar(
         radius: 95,
@@ -209,21 +211,20 @@ class _LoginPageState extends State<LoginPage> {
                               await login
                                   .postLogin(
                                     LoginModel(
-                                        email: _emailController.text,
-                                        password: _passwordController.text),
+                                      email: _emailController.text,
+                                      password: _passwordController.text,
+                                    ),
                                   )
                                   .then(
                                     (value) => Fluttertoast.showToast(
                                             msg: 'berhasil login')
                                         .then((value) {
-                                      if (_emailController.text !=
-                                              "admin@admin.com " ||
-                                          _passwordController.text !=
-                                              "admin123") {
+                                      if (_emailController.text ==
+                                          "admin@admin.com") {
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const UserProfile()));
+                                                    const BottomBarAdmin()));
                                       } else {
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(

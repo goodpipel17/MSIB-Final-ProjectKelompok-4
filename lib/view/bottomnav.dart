@@ -44,7 +44,7 @@ class _BottomNavState extends State<BottomNav> {
                 label: 'Home'),
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.bookmark,
+                  Icons.favorite,
                   size: 32,
                   color: Color(0xffFFA45B),
                 ),

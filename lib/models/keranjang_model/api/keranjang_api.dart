@@ -11,7 +11,7 @@ class KeranjangApi {
     String token = prefs.getString('token').toString();
     try {
       await http.post(
-        Uri.parse('https://api1.sib3.nurulfikri.com/api/keranjang'),
+        Uri.parse('https://aki.nurulfikri.com/api/keranjang'),
         body: data,
         headers: {
           'Authorization': 'Bearer $token',
@@ -23,7 +23,7 @@ class KeranjangApi {
   }
 
   Future<List<KeranjangModel>> getKeranjang() async {
-    Uri url = Uri.parse("https://api1.sib3.nurulfikri.com/api/keranjang");
+    Uri url = Uri.parse("https://aki.nurulfikri.com/api/keranjang");
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 

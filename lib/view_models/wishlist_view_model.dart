@@ -10,7 +10,7 @@ class WishlistViewModel extends ChangeNotifier {
     try {
       await wishlistApi.postWishlist(data);
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 
@@ -19,7 +19,7 @@ class WishlistViewModel extends ChangeNotifier {
       listwishlist = await wishlistApi.getWishlist();
       notifyListeners();
     } catch (_) {
-      // rethrow;
+      rethrow;
     }
   }
 }

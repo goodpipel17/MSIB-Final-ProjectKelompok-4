@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /* penambahan variabel token dan mengambil data menggunakan token pada API */
 class ProductApi {
   Future<List<ProductModel>> getProduct() async {
-    Uri url = Uri.parse("https://api1.sib3.nurulfikri.com/api/barang");
+    Uri url = Uri.parse("https://aki.nurulfikri.com/api/barang");
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -28,7 +28,7 @@ class ProductApi {
   }
 
   Future<List<ProductModel>> getProductByCategoryName(String value) async {
-    Uri url = Uri.parse("https://api1.sib3.nurulfikri.com/api/barang");
+    Uri url = Uri.parse("https://aki.nurulfikri.com/api/barang");
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -52,7 +52,7 @@ class ProductApi {
   }
 
   Future<List<ProductModel>> searchProduct(String query) async {
-    Uri url = Uri.parse("https://api1.sib3.nurulfikri.com/api/barang");
+    Uri url = Uri.parse("https://aki.nurulfikri.com/api/barang");
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -78,7 +78,7 @@ class ProductApi {
         final searchText = query.toLowerCase();
 
         return nameProduct.contains(searchText) &&
-            categoryProduct.contains("k2_$searchText");
+            categoryProduct.contains("kue4_$searchText");
       }).toList();
     } else {
       throw Exception();
